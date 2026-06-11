@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ticketing System</title>
+        <style>
+            body{
+                font-family: verdana;
+                background-color:whitesmoke;
+                padding: 20px;
+            }
+            h1{
+                text-align: center;
+                font-style: italic;
+            }
+            #movies{ 
+                margin-top: 20px;
+                justify-items: center;
+                
+            }
+            .card{
+                border: 2px solid black;
+                text-align: center;
+                padding: 20px;
+                justify-items: center;
+                background: rgb(253, 238, 227);
+                border-radius: 10px;
+                width: 400px;
+                margin: 10px;
+            }
+            button{
+                padding: 10px;
+                background-color: azure;
+                box-shadow: 0 2px 5px grey;
+                border: none;
+                border-radius: 5px;
+                cursor:pointer;
+                align-self: center;
+            }
+            #notify{
+                margin-top: 20px;
+                justify-content: center;
+                
+            }
+            .notify-card1{
+                background-color: antiquewhite;
+                border: 2px solid black;
+                text-align: center;
+                padding: 10px;
+                border-radius:20px;
+                
+            }
+            .notify-card2{
+                background-color: white;
+                border: 1px solid black;
+                text-align: center;
+                padding: 10px;
+                border-radius:20px;
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Ticketing System</h1>
+        <div id="movies"></div>
+        <h2>Notifications</h2>
+        <div id="notify"></div></div>
+        <script>
+            const movies=[
+            {
+                id:1,
+                name:"Avengers"
+            },
+            {
+                id:2,
+                name:"Spiderman"
+            },
+            {
+                id:3,
+                name:"Batman"
+            }]
+            notify=[];
+            function displaymovies(){
+                const container=document.getElementById("movies");
+                container.innerHTML="";
+                movies.forEach(function(movie){
+                    container.innerHTML+=`
+                    <div class="card">
+                        <h2>${movie.name}</h2>
+                        <button onclick="booktickets(${movie.id})">Book Ticket</button>
+                    </div>
+                    `;
+                })
+            };
+            displaymovies();
+            function booktickets(...ids){
+                ids.forEach(function(id){
+                    const movie=movies.find(function(item){
+                        return item.id === id;
+                        
+                    });
+                    notify.unshift(movie)
+                });
+                shownotify();
+            }
+            function shownotify(){
+                const container =document.getElementById("notify");
+                container.innerHTML="";
+                const [recent,...other]=notify;
+                if(recent){
+                    container.innerHTML+=`
+                    <div class="notify-card1">
+                        <h3>Ticket Booked for ${recent.name}</h3>
+                    </div>
+                    `;
+                }
+                other.forEach(function(item){
+                    container.innerHTML+=`
+                    <div class="notify-card2">
+                        <h3>Ticket Booked for ${item.name}</h3>
+                    </div>
+                    `;
+                })
+            }
+        </script>
+    </body>
+</html>

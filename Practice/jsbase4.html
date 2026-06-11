@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <button onclick="showDetails()">click here</button>
+        <h2 id="output"></h2>
+        <script>
+            const person={
+                name:"Abhiram",
+                place:"kakinada",
+                country:"India"
+            };
+            function display(){
+                console.log(this.name);
+                console.log(this.place);
+                console.log(this.country);
+                document.getElementById("output").innerHTML=
+                "name:"+this.name+"<br>"+
+                "place:"+this.place+"<br>"+
+                "country:"+this.country;
+            }
+            function showDetails(){
+                display.call(person);
+            }
+        </script>
+    </body>
+</html>

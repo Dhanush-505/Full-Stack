@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+    <h2>Find Largest Number using reduce()</h2>
+
+    <p id="output"></p>
+
+    <script>
+        let numbers = [34, 45, 78, 23, 52, 21];
+        let largest = numbers.reduce((max, current) =>
+            current > max ? current : max
+        );
+        document.getElementById("output").innerHTML =
+            "Largest Number is: " + largest;
+    </script>
+
+</body>
+</html>

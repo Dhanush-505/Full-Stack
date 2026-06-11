@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Pizza",
+        "category": "Food",
+        "amount": 450
+    },
+    {
+        "id": 2,
+        "title": "Bus Ticket",
+        "category": "Travel",
+        "amount": 120
+    },
+    {
+        "id": 3,
+        "title": "Electricity Bill",
+        "category": "Bills",
+        "amount": 2000
+    },
+    {
+        "id": 4,
+        "title": "Shoes",
+        "category": "Shopping",
+        "amount": 1500
+    }
+]

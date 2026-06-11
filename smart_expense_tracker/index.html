@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Smart Expense Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <div class ="container">
+        
+            <h1>Smart Expense Tracker</h1>
+            <div class="summary">
+                <div id="card">
+                    <h3>Total Expenses</h3>
+                    <p id="totalexpense">₹0</p>
+                </div>
+                <div id="card">
+                    <h3>Total Transactions</h3>
+                    <p id="totaltransactions">0</p>
+                </div>
+                <div id="card">
+                    <h3>Highest Expense</h3>
+                    <p id="highestexpense">₹0</p>
+                </div>
+            </div>
+        <h1>Add New Expense</h1>
+        <div class="section">
+         <input type="text" id="title" placeholder="Expense title">
+         <select id="category">
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+        </select>
+        <input type="number" id="amt" placeholder="Amount">
+        <button id="addbtn">Add Expense</button>
+        </div>
+        <h1>Filter Expenses</h1>
+        <div class="filter">
+            
+            <select id="filtercategory">
+                <option value="All">All</option>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Bills">Bills</option>
+            </select>
+        </div>
+        <h1>--Expenses--</h1>
+        <table>
+            <thead><tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody id="expenseBody">
+
+            </tbody>
+        </table>
+       
+        </div>
+    <script src="Scan.js"></script>
+</body>
+</html>

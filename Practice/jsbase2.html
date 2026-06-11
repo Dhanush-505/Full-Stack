@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <ol id="ol">
+            <li>sample</li>
+        </ol>
+        <input type="text" name="" id="input" value=""/><br>
+        <button type="submit" id="add" onclick="fun()">Add</button>
+        <script>
+            let ol;
+            ol=document.getElementById("ol");
+            let input;
+            input=document.getElementById("input");
+            function fun(){
+                let li;
+                li=document.createElement("li");
+                li.append(input.value);
+                ol.append(li);
+            }
+        </script>
+    </body>
+</html>

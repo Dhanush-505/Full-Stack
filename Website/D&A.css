@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    width:100%;
+    height:80px;
+    padding:0  50px;
+    backdrop-filter: blur;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    position:fixed;
+    top:0;
+    left: 0;
+}
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#333;
+
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.login-btn{ 
+    padding: 10px 20px;
+    border: none;
+    background-color: #222;
+    color: white;
+    border-radius: 8px;
+}
+section{
+    width:100%;
+    padding:20px;
+}
+body{
+    background:#f5f5f5
+}
+.section1{
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 20px;
+    min-height: 450px;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+.title{
+    flex: 1;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 20px;
+}
+.title h1{
+    line-height: 1.6;
+    color:black;
+}
+.title p{
+    line-height: 1.6;
+    color: #555;
+}
+.title h2{
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+.Hero-img{
+    display: flex;
+    flex: 1;
+    padding: 100px;
+    border-radius: 10px;
+    position: relative;
+    height:500px;
+    overflow: hidden;
+}
+.offer{
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background:crimson ;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
+.section2{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+}
+.menu{
+    background: white;
+    border-radius: 20px;
+    padding: 20px ;
+    background: 0 4px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    width:20%;
+    height: 300px;
+    top: 75px;
+}
+.menu h1{
+    margin-bottom: 20px;
+}
+.menu ul{
+    list-style: none;
+}
+.menu ul li{
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #eee;
+    border-radius: 10px;
+}
+.options{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card{
+    height: 150px;
+    width:30%;
+    background: antiquewhite;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.card img{
+    width: 100%;
+    height: 80%;
+    border-radius: 20px 20px 0 0;
+}
+.card p{
+    font-style: italic;
+    text-align: center;
+    font-size: small;
+}
+footer{
+    text-align: center;
+    font-style: italic;
+    color: #555;
+}
+.bot{
+    position:fixed;
+    bottom: 0;
+    right: 20px;
+    height: 50px;
+    width:50px;
+    border-radius: 50px;
+    background: antiquewhite;
+    border: none;
+}

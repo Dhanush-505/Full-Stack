@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Attendance</title>
+    </head>
+    <body>
+        <h2>Student Attendance</h2>
+        <ul id="studentList"></ul>
+        <script>
+            const students=[{
+                id:1,
+                name:"DugraPrasad",
+                attendance:"present"
+            },{
+                id:2,
+                name:"Deepthi",
+                attendance:"absent"
+            },{
+                id:3,
+                name:"Dhanush",
+                attendance:"present"
+            },{
+                id:4,
+                name:"tanuja",
+                attendance:"absent"
+            }
+            ];
+            fetch("fake-api")
+            .then(()=>{
+                return students;
+            })
+            .then((data)=>{
+                const studentList=document.getElementById("studentList");
+                data.forEach((student)=>{
+                    const li =document.createElement("li");
+                    li.innerText=student.name + " - " + student.attendance;
+                    studentList.appendChild(li);
+                });
+            })
+            .catch((error)=>{
+                console.log("Error:",error);
+            })
+        </script>
+    </body>
+</html>

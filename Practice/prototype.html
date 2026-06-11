@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>student info</title>
+        <style>
+            body{
+                font-family:'Times New Roman';
+                background-color:seashell ;
+                margin-top: 50px;
+            }
+            h1{
+                text-align:center;
+            }
+            .card{
+                background: rgb(178, 207, 220);
+                width: 400px;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px grey;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+            h3{
+                color:black;
+            }
+            button{
+                padding:10px; 
+                cursor: pointer;
+                margin: 5px;
+                border-radius: 10px;
+                color:white;
+                background: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Student Information</h1>
+        <div id="output"></div>
+        <script>
+        function Student(name,course){
+            this.name=name;
+            this.course=course;
+        }
+         Student.prototype.status=function(actionName,statusElementId){
+            const statusBox=document.getElementById(statusElementId);
+            statusBox.innerHTML=`${this.name} is ${actionName}`;
+         };
+        Student.prototype.display=function(){
+            const container=document.getElementById("output");
+            const statusId=`status-${this.name}`;
+                container.innerHTML+=`
+                <div class="card">
+                    <h3> ${this.name} --- ${this.course} </h3>
+                    
+                    <button onclick="triggerAction('${this.name}', 'logging in', '${statusId}')">login</button>
+                    <button onclick="triggerAction('${this.name}', 'Watching Lecture', '${statusId}')">watch lectures</button>
+                    <button onclick="triggerAction('${this.name}', 'Downloading Certificate', '${statusId}')">download certificates</button>
+                    <button onclick="triggerAction('${this.name}', 'Submitting Assignment', '${statusId}')">submit assignments</button>
+                    <div class="status" id="${statusId}">waiting for action...</div>
+                </div>
+                `;
+                    };
+            function triggerAction(Name,actionMessage,statusBoxId){
+                const activeStudent=students.find(s=>s.name===Name);
+                activeStudent.status(actionMessage,statusBoxId);
+            }
+        const s1= new Student("Abhiram","MERN");
+        const s2= new Student("Dhanush","Python");
+        const s3= new Student("Tanuja","Java");
+        const s4= new Student("Deepthi","Data Science");
+        const s5= new Student("Durga Prasad","C++");
+        const students=[s1,s2,s3,s4,s5];
+        students.forEach(function(s){
+            s.display();
+        }); 
+    </script>
+    </body>
+</html>

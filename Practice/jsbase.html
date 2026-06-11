@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My JavaScript Page</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                padding: 20px;
+            }
+            h1{
+                color: #333;
+            }
+            #output{
+                margin-top: 20px;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                line-height: 2rem;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Welcome to My JavaScript Page!</h1>
+        <div id="output"></div>
+        <script>
+            let st="This project belongs originally to Dhanush";
+            let arr=st.split(" ");
+            output.innerHTML +="original array: "+arr+"<br>";
+            arr.splice(1,0,"JavaScript");
+            output.innerHTML +="after splice: "+arr+"<br>";
+            arr.reverse();
+            output.innerHTML +="after reverse: "+arr+"<br>";
+            arr.reverse()
+            arr.shift();
+            output.innerHTML +="after shift: "+arr+"<br>";
+            arr.push("Mosaic");
+            output.innerHTML +="after push: "+arr+"<br>";
+            function hw(a){
+                return a.length>4;
+            }
+            function fn(a){
+                return a.startsWith("b");
+             }
+            function fm(a){
+                return a.includes("i");
+             }
+            let r=arr.filter(hw);
+            output.innerHTML +="after filter: "+r+"<br>";
+            let f=arr.find(fn);
+            output.innerHTML +="after find: "+f+"<br>";
+            let m=arr.every(fm);
+            output.innerHTML +="after EVERY: "+m+"<br>";
+        </script>
+    </body>
+</html>

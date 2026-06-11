@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Billing System</title>
+        <style>
+            body{
+                font-family: "calibri";
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Billing System</h1>
+        <input type="number" id="quantity" placeholder="Enter quantity" value=""/><br>
+        <button onclick="Addcart()">Add to cart</button>
+        <button onclick="calculate_total()">Calculate Total</button>
+        <div id="cart"></div>
+        <div id="total"></div>
+        <script>
+            let cart=[];
+            function Addcart(){
+                const item=document.getElementById("quantity").value;
+                cart.push(item);
+                showcart();
+
+            }
+            function showcart(){
+                const container=document.getElementById("cart");
+                container.innerHTML="";
+                cart.forEach(function(item){
+                    container.innerHTML+=`<p>${item}</p>`;
+                })
+            }
+            function calculate_total(){
+                let t=0;
+                cart.forEach(function(...item){
+                    t+=parseFloat(item);
+                    document.getElementById("total").innerHTML="Total: "+t;
+                });
+            }
+        </script>
+    </body>
+</html>

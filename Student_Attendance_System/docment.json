@@ -1,0 +1,89 @@
+[
+    {
+        "id": 1,
+        "name": "Abhiram",
+        "course": "full Stack",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 2,
+        "name": "Dhanush",
+        "course": "Mern Stack",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 3,
+        "name": "Sowjanya",
+        "course": "B.Sc",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 4,
+        "name": "Mounika",
+        "course": "Degree",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 5,
+        "name": "Chinnu",
+        "course": "MLT",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 6,
+        "name": "Durga Prasad",
+        "course": "full Stack",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 7,
+        "name": "Deepthi",
+        "course": "Java",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 8,
+        "name": "Tanuja",
+        "course": "python",
+        "rollno": 22,
+        "email":"abhi@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 9,
+        "name": "Abhiram",
+        "course": "full Stack",
+        "rollno": 22,
+        "email":"abh@gmail.com",
+        "phone": 9392653279
+    },{
+        "id": 10,
+        "name": "Abhiram",
+        "course": "full Stack",
+        "rollno": 22,
+        "email":"abh@gmail.com",
+        "phone": 9392653279
+    },
+    {
+        "id": 11,
+        "name": "Abhiram",
+        "course": "full Stack",
+        "rollno": 22,
+        "email":"abh@gmail.com",
+        "phone": 9392653279
+    }
+]

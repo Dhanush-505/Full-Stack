@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Website</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                padding: 20px;
+            }
+            h1,h2{
+                color: #333;
+                text-align: center;
+            }
+            #products,#cartItems{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            .card{
+                background: rgb(178, 207, 220);
+                width: 220px;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px grey;
+                text-align: center;
+            }
+            .card img{
+                width: 100%;
+                height: 200px;
+                object-fit: fill;
+                border-radius: 10px;
+            }
+            button{
+                padding: 10px;
+                background-color: #deeaf8;
+                color: rgb(23, 23, 23);
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #total{
+                text-align: center;
+                margin-top: 20px;
+                font-size: 22px;
+            }
+            .featured{
+                border:3px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Product Catalog</h1>
+        <div id="products"></div>
+        <h2>CartItems</h2>
+        <div id="cartItems"></div>
+        <h2 id="total"> Total:0</h2>
+        <script>
+            const products = [
+                {
+                    id: 1,
+                    name: "Laptop",
+                    price: 999.99,
+                    image: "assets/laptop.jpg"
+                },
+                {
+                    id: 2,
+                    name: "Smartphone",
+                    price: 499.99,
+                    image: "assets/mobile.jpg"
+                },
+                {
+                    id: 3,
+                    name: "Headphones",
+                    price: 199.99,
+                    image: "assets/headset.jpg"
+                },{
+                    id: 4,
+                    name: "Smartwatch",
+                    price: 299.99,
+                    image: "assets/watch.jpg"
+                }
+            ];
+            fetch("fake-api")
+            .then(()=>{
+                return products;
+            })
+            .then((data)=>{
+                return data=products;
+            })
+            .catch((error)=>{
+                console.log("Error:");
+            });
+            let cart=[];
+            function displayProducts(){
+                const  productcontainer=document.getElementById("products");
+                productcontainer.innerHTML="";
+                products.forEach(function(product){
+                    productcontainer.innerHTML+=`
+                    <div class="card">
+                        <img src=${product.image} alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>$${product.price}</p>
+                        <button onclick="addTocart(${product.id})">Add to Cart</button>
+                    </div>
+                    `;
+                    });
+            }
+            displayProducts();//calling afunction
+            function addTocart(...ids){// function for add to cart button
+                ids.forEach(function(id){
+                    const product= products.find(function(item){//matches the index in the container
+                        return item.id === id;
+                    });
+                    cart.push(product)});//pushes to cart
+                showCart();
+            }
+            function showCart(){//to display cart items
+                const cartContainer=document.getElementById("cartItems");//creates a container for the cart
+                cartContainer.innerHTML="";
+                const [featuredItem,...otherItems] = cart;
+                let total=0;
+                if(featuredItem){
+                    total +=featuredItem.price;
+                    cartContainer.innerHTML +=`
+                    <h2> Featured one</h2>
+                    <div class="card featured">
+                        <img src ="${featuredItem.image}">
+                        <h3>${featuredItem.name}</h3>
+                        <p>${featuredItem.price}</p>
+                        <button onclick="removefromcart(0)">
+                            Remove
+                        </button></div>`;
+                }
+                otherItems.forEach(function(item,index){//adding the sum of total in cartitems
+                    total =total+item.price;//structure for cart-card
+                    cartContainer.innerHTML +=`
+                    <div class="card">
+                        <img src="${item.image}">
+                        <h3>${item.name}</h3>
+                        <p>${item.price}</p>
+                        <button onclick="removefromcart(${index+1})">
+                        Remove
+                        </button></div>
+                        `;
+                });
+                document.getElementById("total").innerText="Total:"+total;//display total 
+            }
+            function removefromcart(index){//function for the remove button
+                    cart.splice(index,1);
+                    showCart();
+                }
+        </script>
+    </body>
+</html>

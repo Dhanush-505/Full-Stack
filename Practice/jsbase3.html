@@ -1,0 +1,46 @@
+<!DOCTYPE html><html>
+    <head>
+        <style>
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                background-color:seashell ;
+                margin-top: 50px;
+                text-align: center;
+                
+            }
+            button{
+                padding:10px; 
+                cursor: pointer;
+            }
+            h2{
+                color:rgb(217, 190, 243)
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Call-Apply-Bind</h2>
+        <button onclick="usecall()">Call</button>
+        <button onclick="useapply()">Apply</button>
+        <button onclick="usebind()">Bind</button>
+        <h3 id="output"></h3>
+        <script>
+            const person ={
+                name:"Abhiram"
+            };
+            function greet(age,city){
+                document.getElementById("output").innerHTML=
+                "Name: "+this.name+"| Age: "+age+"| City: "+city
+            }
+            function usecall(){
+                greet.call(person,21,"vizag");
+            }
+            function useapply(){
+                greet.apply(person,[22,"kakinada"]);
+            }
+            function usebind(){
+                const fun=greet.bind(person,18,"chennai");
+                fun();
+            }
+        </script>
+    </body>
+</html>
