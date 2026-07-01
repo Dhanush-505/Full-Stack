@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "name":"Abhiram",
+        "age":21,
+        "designation":"Software Engineer",
+        "salary":50000
+    },
+     {
+        "id":2,
+        "name":"Dhanush",
+        "age":20,
+        "designation":"Software Developer",
+        "salary":40000
+    },
+    {
+        "id":3,
+        "name":"Greeshma",
+        "age":21,
+        "designation":"Software Engineer",
+        "salary":60000
+    },
+     {
+        "id":4,
+        "name":"Surya",
+        "age":22,
+        "designation":"Software Developer",
+        "salary":40000
+    }
+]
